@@ -1,0 +1,35 @@
+h2, p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+h2 {
+    font-size: 100px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.img-fun-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.rnd-img {
+    display: block;
+    text-align: center;
+    margin: 0 auto 50px;
+}
+
+.img-fun {
+    max-width: 70%;
+    height: auto;
+    max-height: .8vm;
+    margin: auto;
+}

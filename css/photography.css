@@ -1,0 +1,20 @@
+.banner {
+    background-image: url("../img/banner/P4160003.jpg");
+}
+
+.row {
+    height: auto;
+    margin: 20px auto;
+}
+
+.row .photo {
+    padding-top: 66.25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    width: 100%;
+    min-height: 100px;
+}

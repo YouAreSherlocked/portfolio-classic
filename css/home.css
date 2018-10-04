@@ -1,0 +1,256 @@
+/*------3D BOXES------
+.tile {
+    padding: 4px;
+    box-shadow: rgba(0,0,0,0.5);
+    -webkit-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in;
+}
+
+.tile:hover {
+    box-shadow: 0 2px 0 #eeeeee, 0 4px 0 #eeeeee, 0 6px 0 #eeeeee, 0 8px 0 #eeeeee, 0 10px 0 #eeeeee, 0 12px 0 #eeeeee, 0px 12px 10px rgba(0,0,0,0.5);
+    top: -12px;
+    transition: all 0.1s ease-in;
+}
+ 
+ 
+.tile:active {
+    box-shadow: none;
+    bottom: 0;
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.5);
+}
+*/
+
+.responsive-desktop {
+    transform: perspective(1400px) rotateY(0deg);
+    transform-origin: center;
+    overflow: hidden;
+}
+
+.tile-wrapper {
+    overflow: hidden;
+}
+
+.tile-logo { /*LOGO*/
+    height: 40%;
+}
+
+.tile-arrow {
+    display: block;
+    margin: 0 auto 20px auto;
+    height: 28px;
+    width: auto;
+    cursor: pointer;
+}
+
+.tile-1 { /*GRAPHIC DESIGN*/
+    height: 100%;
+}
+
+.tile-2 { /*CONTACT*/
+    height: 60%;
+}
+
+.tile-3 { /*ILLUSTRATIONS*/
+    height: 100%;
+}
+
+.tile-4 { /*3D*/
+    height: 30%;
+}
+
+.tile-5 { /*PHOTOGRAPHY*/
+    height: 30%;
+}
+
+.tile-6 { /*WEBSITES*/
+    height: 70%;
+}
+
+.tile-7 { /*ANIMATION & FILM*/
+    height: 70%;
+}
+
+.tile-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #d4d4d4; /* fallback color */
+    background-position: center;
+    background-size: cover;
+    transition: all .8s;
+}
+
+.tile-text {
+    width: 100%;
+    height: 100%;
+    display: table;
+    opacity: 1;
+    background: #09508a;
+    transition: all 1.5s ease;
+    -moz-transform: translateY(-101%);
+	-webkit-transform: translateY(-101%);
+	-ms-transform: translateY(-101%);
+	transform: translateY(-101%);
+}
+
+.tr-up {
+    -moz-transform: translateY(-101%);
+	-webkit-transform: translateY(-101%);
+	-ms-transform: translateY(-101%);
+    transform: translateY(-101%);
+}
+
+.tr-do {
+    -moz-transform: translateY(101%);
+	-webkit-transform: translateY(101%);
+	-ms-transform: translateY(101%);
+    transform: translateY(101%);
+}
+
+.tr-ri {
+    -moz-transform: translateX(101%);
+	-webkit-transform: translateX(101%);
+	-ms-transform: translateX(101%);
+    transform: translateX(101%);
+}
+
+.tr-le {
+    -moz-transform: translateX(-101%);
+	-webkit-transform: translateX(-101%);
+	-ms-transform: translateX(-101%);
+    transform: translateX(-101%);
+}
+
+.bg-blue {background: #6385a0;}
+.bg-beige {background: #a3947e;}
+.bg-red {background: #7a4550;}
+
+.tile-text div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    letter-spacing: .1em;
+    font-size: 22pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: none;
+}
+
+.tile:hover .tile-bg,
+.tile:focus .tile-bg {
+  transform: scale(1.06);
+}
+
+.tile:hover .tile-text {
+    transform: scale(.94);
+    -moz-transform: translateY(0);
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+    transform: translateY(0);
+    -moz-transform: translateX(0);
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+
+.tile-bg-logo { /*LOGO*/
+    background-image: url("../img/logo_tm_transparent.png");
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-color: #a3947e;
+}
+
+.tile-bg-1 { /*GRAPHIC DESIGN*/
+    background-image: url("../img/tile_graphic_design.jpg");
+}
+
+.tile-bg-2 { /*CONTACT*/
+    background-image: url("../img/tile_contact.jpg");
+}
+
+.tile-bg-3 { /*ILLUSTRATIONS*/
+    background-image: url("../img/tile_illustrations.jpg");
+}
+
+.tile-bg-4 { /*3D*/
+    background-image: url("../img/tile_three_d.jpg");
+}
+
+.tile-bg-5 { /*PHOTOGRAPHY*/
+    background-image: url("../img/tile_photography.jpg");
+}
+
+.tile-bg-6 { /*WEBSITES*/
+    background-image: url("../img/tile_graphic_design.jpg");
+}
+
+.tile-bg-7 { /*ANIMATION & FILM*/
+    background-image: url("../img/tile_film_animation.jpg");
+}
+
+.logo-mobile {
+    display: block;
+    margin: auto auto;
+    width: auto;
+    height: 80%;
+    -webkit-transition: all .6s ease;
+    -moz-transition: all .6s ease;
+    -o-transition: all .6s ease;
+    transition: all .6s ease;
+}
+.logo-mobile:hover {
+    transform: scale(1.1);
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    transition: all .8s ease;
+}
+
+.arrow-down {
+    display: block;
+    margin: auto auto;
+    width: auto;
+    cursor: pointer;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+
+}
+.arrow-down:hover {
+    transform: scale(.9);
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .tile {
+        height: 200px;
+    }
+
+    .tile-text, .tr-up, .tr-do, .tr-ri, .tr-le  {
+        -moz-transform: translateY(0%);
+	    -webkit-transform: translateY(0%);
+	    -ms-transform: translateY(0%);
+	    transform: translateY(0%);
+    }
+
+    .to-remove {
+        display: none;
+        visibility: hidden;
+    }
+
+    .tile-text {
+        width: 60%;
+    }
+    .tile-text:hover {
+        width: 100%;
+    }
+
+    .tile-bg {
+        background-position-x: 200px;
+    }
+}
