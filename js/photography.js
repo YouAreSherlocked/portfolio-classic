@@ -17,7 +17,7 @@ function addContent() {
     $(photo).addClass("col-sm-12 photo " + imgClass);
     var eRight = document.createElement("div");
     $(eRight).addClass("col-sm-2");
-    $(eRight).html(i);
+    //$(eRight).html(i);
 
     $(eCenter).append(photo);
     $(newImg).append(eLeft);
@@ -28,8 +28,21 @@ function addContent() {
 
     $("." + imgClass).css({
         'background-image' : 'url("../img/photography/img' + i + '.jpg")',
-        'z-index' : i
+        'z-index' : i,
+        'background-size' : '3000%'
     });
-    }
-    
+    }  
 }
+
+// $(window).resize(function() {
+//     responsive();
+// });
+
+// function responsive(){
+//     var screenWidth = window.innerWidth;
+//     if(screenWidth <= 1400 && lastScreenWidth > 1400) {
+//         $(eLeft).removeClass("col-sm-2");
+//         $(eCenter).removeClass("col-sm-10");
+//         $(eCenter).addClass("col-sm-12");
+//     }
+// }

@@ -1,9 +1,9 @@
 var lastRnd;
+var lastScreenWidth;
 
 //When all Elements are loaded
 $(document).ready(function () {
     responsive();
-    link();
     //Go to top of page
     $('#goToTop').click(function () {
         $('html, body').animate({ scrollTop: 0 }, 600);
@@ -42,10 +42,21 @@ function goToLocation(id) {
 
 //Toggle between Desktop and Mobile Version
 $(window).resize(function() {
+    var screenWidth = window.innerWidth;
+    console.log(screenWidth);
     responsive();
 });
 
 function responsive(){
+    screenWidth = window.innerWidth;
+    if(screenWidth <= 1400 && lastScreenWidth > 1400) {
+        console.log("now");
+        $("nav").children("a").css("opacity", "0");
+        $("nav").children("a").animate({opacity:1},1000)
+    }
+    else {
+    }
+
     if($(window).width() < 1200) {
         $('.responsive-desktop').addClass('hidden');
         $('.responsive-mobile').removeClass('hidden');
@@ -54,9 +65,10 @@ function responsive(){
         $('.responsive-mobile').addClass('hidden');
         $('.responsive-desktop').removeClass('hidden');
     }
+    lastScreenWidth = screenWidth;
 }
 
-//Banner Parallax Effect
+//Banner Parallax Effect & Header smaller
 $(function() {
     var banner = $('.parallax-background');
     var bannerText = $('.banner-text');
@@ -67,8 +79,12 @@ $(function() {
     var bannerFont = $(bannerText).css('font-size');
     var bannerFontSize = Number(bannerFont.replace('px',''));
 
+    var scroll = $(document).scrollTop();
+    var lastScroll = 0;
+
     $(window).on('scroll', function () {
-        var scroll = $(document).scrollTop();
+        scroll = $(document).scrollTop();
+        
         banner.css({
             'background-position': xPos + ((y)+(.01*scroll)) + '%'
         });
@@ -76,6 +92,24 @@ $(function() {
         bannerText.css({
             'font-size': (bannerFontSize - (scroll*.08)) + 'px'
         });
+
+        //Make Header smaller
+        if (scroll >= 400) {
+            if (lastScroll < 400) {
+                var y = $(window).scrollTop(); 
+                $("html, body").animate({ scrollTop: 450 }, 200);
+            } 
+            $(".head").css("height", "60px");
+            $(".logo").css("visibility", "hidden");
+            $(".menuToggle").css("top", "20px");
+        }
+        else {
+            $(".head").css("height", "112px");
+            $(".logo").css("visibility", "visible");
+            $(".menuToggle").css("top", "40px");
+        }
+        console.log(lastScroll, scroll);
+        lastScroll = scroll;
     });
 });
 
@@ -160,3 +194,24 @@ $(function() {
          }
     );
 });
+
+$(function() {
+    var show = false;
+    $(".menuToggle").click( function() {
+        if (show != true) {
+            $(".nav-mobile").css("transform", "translateX(0)");
+            $(".menuToggle").children().css("background", "#fff");
+            $("body").bind("mousewheel", function() {
+                return false;
+            });
+        show = true;
+        }
+        else {
+            $(".nav-mobile").css("transform", "translateX(100%)");
+            $(".menuToggle").children().css("background", "#333");
+            $("body").unbind("mousewheel");
+            show = false;
+        }
+    });
+});
+
