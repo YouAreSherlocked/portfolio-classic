@@ -87,7 +87,7 @@ nav a:last-child {
 .nav-mobile {
     z-index: 505;
     height: 100%;
-    min-width: 400px;
+    width: 100%;
     padding: 40px 0;
     position: fixed;
     top: 0;
@@ -95,16 +95,27 @@ nav a:last-child {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background: #a3947e;
     transform: translateX(100%);
     transition: all .6s ease;
 }
 
 .nav-mobile a {
-    margin: 0;
-    padding: 0;
+    font-size: 16pt;
+    height: auto;
+    margin: 4vh 0;
+    padding: 5px;
     color: #fff;
     background: none;
+}
+.nav-mobile a:hover {
+    color: #efefef;
+    text-decoration: overline;
+}
+
+.nav-mobile a:active, .nav-mobile a:focus {
+    color: #333;
 }
 
 .title-container {
@@ -120,6 +131,7 @@ nav a:last-child {
 
 /*#region menuToggle*/
 .menuToggle, .menuToggle * {
+    visibility: hidden;
     opacity: 0;
     transition: opacity .4s ease;
 }
@@ -231,7 +243,7 @@ footer, footer a {
     position: fixed;
     right: 40px;
     bottom: 40px;
-    z-index: 999;
+    z-index: 499;
     width: 50px;
     height: 50px;
     background-image: url('../img/goToTop.png');
@@ -305,6 +317,7 @@ footer, footer a {
     } 
 
     .menuToggle, .menuToggle * {
+        visibility: visible;
         opacity: 1;
     }
 }

@@ -105,7 +105,8 @@
     -moz-transform: translateY(-101%);
 	-webkit-transform: translateY(-101%);
 	-ms-transform: translateY(-101%);
-	transform: translateY(-101%);
+    transform: translateY(-101%);
+    transition: all 1s cubic-bezier(0.8, 0.46, 1,-1.62);
 }
 
 .tr-up {
